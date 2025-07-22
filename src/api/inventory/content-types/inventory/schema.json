@@ -22,7 +22,14 @@
       "type": "integer"
     },
     "img": {
-      "type": "string"
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "shop": {
       "type": "string"
