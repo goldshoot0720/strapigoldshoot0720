@@ -456,7 +456,7 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
   };
   attributes: {
     activity: Schema.Attribute.RichText;
-    address: Schema.Attribute.String;
+    address: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "20250723 v2"
+git commit -m "20250723 v3"
 
 git remote add origin https://github.com/goldshoot0720/strapigoldshoot0720.git
 
