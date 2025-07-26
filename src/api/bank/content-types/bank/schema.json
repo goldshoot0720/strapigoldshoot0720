@@ -30,7 +30,13 @@
       "type": "integer"
     },
     "activity": {
-      "type": "richtext"
+      "type": "string"
+    },
+    "card": {
+      "type": "string"
+    },
+    "account": {
+      "type": "string"
     }
   }
 }

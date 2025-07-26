@@ -425,6 +425,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    file1: Schema.Attribute.RichText;
+    file1type: Schema.Attribute.String;
+    file2: Schema.Attribute.RichText;
+    file2type: Schema.Attribute.String;
+    file3: Schema.Attribute.RichText;
+    file3type: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -455,8 +461,10 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    activity: Schema.Attribute.RichText;
+    account: Schema.Attribute.String;
+    activity: Schema.Attribute.String;
     address: Schema.Attribute.RichText;
+    card: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

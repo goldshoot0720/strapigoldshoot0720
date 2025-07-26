@@ -29,6 +29,24 @@
         "videos",
         "audios"
       ]
+    },
+    "file1": {
+      "type": "richtext"
+    },
+    "file1type": {
+      "type": "string"
+    },
+    "file2": {
+      "type": "richtext"
+    },
+    "file2type": {
+      "type": "string"
+    },
+    "file3": {
+      "type": "richtext"
+    },
+    "file3type": {
+      "type": "string"
     }
   }
 }
