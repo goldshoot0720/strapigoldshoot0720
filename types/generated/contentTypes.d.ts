@@ -443,7 +443,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     >;
     newDate: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -465,6 +465,7 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
     activity: Schema.Attribute.String;
     address: Schema.Attribute.RichText;
     card: Schema.Attribute.String;
+    cardimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -472,7 +473,7 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::bank.bank'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
     transfer: Schema.Attribute.Integer;
@@ -501,7 +502,7 @@ export interface ApiCloudCloud extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::cloud.cloud'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
     space: Schema.Attribute.Integer;
@@ -534,7 +535,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -560,7 +561,7 @@ export interface ApiFoodFood extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::food.food'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     photo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -594,7 +595,7 @@ export interface ApiHostHost extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::host.host'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -686,7 +687,7 @@ export interface ApiMemberMember extends Struct.CollectionTypeSchema {
       'api::member.member'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     relation: Schema.Attribute.String;
     site: Schema.Attribute.String;
@@ -717,7 +718,7 @@ export interface ApiRoutineRoutine extends Struct.CollectionTypeSchema {
       'api::routine.routine'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     nextdate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
@@ -749,7 +750,7 @@ export interface ApiSubscriptionSubscription
       'api::subscription.subscription'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     nextdate: Schema.Attribute.Date;
     note: Schema.Attribute.RichText;
     price: Schema.Attribute.Integer;
@@ -780,7 +781,7 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::video.video'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     season: Schema.Attribute.String;
     site: Schema.Attribute.String;
