@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routines",
+  "info": {
+    "singularName": "routine",
+    "pluralName": "routines",
+    "displayName": "routine"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "nextdate": {
+      "type": "date"
+    },
+    "site": {
+      "type": "string"
+    }
+  }
+}
