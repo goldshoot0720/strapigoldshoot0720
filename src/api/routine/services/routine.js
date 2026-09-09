@@ -4,6 +4,6 @@
  * routine service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreService('api::routine.routine');
+module.exports = factories.createCoreService('api::routine.routine');

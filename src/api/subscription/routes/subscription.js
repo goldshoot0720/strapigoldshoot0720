@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * subscription router
+ * subscription route
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreRouter('api::subscription.subscription');
+module.exports = factories.createCoreRouter('api::subscription.subscription');

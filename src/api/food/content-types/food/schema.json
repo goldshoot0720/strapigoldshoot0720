@@ -7,13 +7,13 @@
     "displayName": "food"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "unique": true
+      "required": true
     },
     "amount": {
       "type": "integer"
@@ -25,19 +25,18 @@
       "type": "string"
     },
     "todate": {
-      "type": "date"
+      "type": "datetime"
     },
     "photo": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "type": "string"
+    },
+    "photohash": {
+      "type": "text"
     },
     "photoHash": {
+      "type": "string"
+    },
+    "photourl": {
       "type": "string"
     }
   }

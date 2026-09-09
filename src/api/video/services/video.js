@@ -4,6 +4,6 @@
  * video service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreService('api::video.video');
+module.exports = factories.createCoreService('api::video.video');

@@ -7,13 +7,13 @@
     "displayName": "bank"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "unique": true
+      "required": true
     },
     "deposit": {
       "type": "integer"

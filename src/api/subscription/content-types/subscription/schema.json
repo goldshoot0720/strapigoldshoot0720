@@ -7,13 +7,13 @@
     "displayName": "subscription"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "unique": true
+      "required": true
     },
     "site": {
       "type": "string"
@@ -21,14 +21,25 @@
     "price": {
       "type": "integer"
     },
+    "nextdate": {
+      "type": "datetime"
+    },
+    "note": {
+      "type": "text"
+    },
     "account": {
       "type": "string"
     },
-    "nextdate": {
-      "type": "date"
+    "currency": {
+      "type": "string"
     },
-    "note": {
-      "type": "richtext"
+    "continue": {
+      "type": "boolean",
+      "default": true
+    },
+    "iscontinue": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

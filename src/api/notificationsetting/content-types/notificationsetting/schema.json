@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notificationsettings",
+  "info": {
+    "singularName": "notificationsetting",
+    "pluralName": "notificationsettings",
+    "displayName": "notificationsettings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "passwordHash": {
+      "type": "text"
+    },
+    "fromEmail": {
+      "type": "text"
+    },
+    "slotsJson": {
+      "type": "text"
+    }
+  }
+}

@@ -4,6 +4,6 @@
  * food controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreController('api::food.food');
+module.exports = factories.createCoreController('api::food.food');

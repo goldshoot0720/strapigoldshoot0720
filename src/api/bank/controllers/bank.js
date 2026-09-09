@@ -4,6 +4,6 @@
  * bank controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreController('api::bank.bank');
+module.exports = factories.createCoreController('api::bank.bank');

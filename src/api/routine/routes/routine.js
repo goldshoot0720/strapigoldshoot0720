@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * routine router
+ * routine route
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreRouter('api::routine.routine');
+module.exports = factories.createCoreRouter('api::routine.routine');

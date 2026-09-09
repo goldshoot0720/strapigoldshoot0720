@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * bank router
+ * bank route
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreRouter('api::bank.bank');
+module.exports = factories.createCoreRouter('api::bank.bank');

@@ -438,18 +438,22 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     singularName: 'article';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    category: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     file1: Schema.Attribute.RichText;
+    file1name: Schema.Attribute.String;
     file1type: Schema.Attribute.String;
     file2: Schema.Attribute.RichText;
+    file2name: Schema.Attribute.String;
     file2type: Schema.Attribute.String;
     file3: Schema.Attribute.RichText;
+    file3name: Schema.Attribute.String;
     file3type: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -463,10 +467,14 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     >;
     newDate: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Unique;
+    ref: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url1: Schema.Attribute.String;
+    url2: Schema.Attribute.String;
+    url3: Schema.Attribute.String;
   };
 }
 
@@ -478,7 +486,7 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
     singularName: 'bank';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     account: Schema.Attribute.String;
@@ -493,7 +501,7 @@ export interface ApiBankBank extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::bank.bank'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Unique;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
     transfer: Schema.Attribute.Integer;
@@ -532,6 +540,145 @@ export interface ApiCloudCloud extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCommonaccountCommonaccount
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'commonaccounts';
+  info: {
+    displayName: 'commonaccount';
+    pluralName: 'commonaccounts';
+    singularName: 'commonaccount';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commonaccount.commonaccount'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note01: Schema.Attribute.String;
+    note02: Schema.Attribute.String;
+    note03: Schema.Attribute.String;
+    note04: Schema.Attribute.String;
+    note05: Schema.Attribute.String;
+    note06: Schema.Attribute.String;
+    note07: Schema.Attribute.String;
+    note08: Schema.Attribute.String;
+    note09: Schema.Attribute.String;
+    note10: Schema.Attribute.String;
+    note11: Schema.Attribute.String;
+    note12: Schema.Attribute.String;
+    note13: Schema.Attribute.String;
+    note14: Schema.Attribute.String;
+    note15: Schema.Attribute.String;
+    note16: Schema.Attribute.String;
+    note17: Schema.Attribute.String;
+    note18: Schema.Attribute.String;
+    note19: Schema.Attribute.String;
+    note20: Schema.Attribute.String;
+    note21: Schema.Attribute.String;
+    note22: Schema.Attribute.String;
+    note23: Schema.Attribute.String;
+    note24: Schema.Attribute.String;
+    note25: Schema.Attribute.String;
+    note26: Schema.Attribute.String;
+    note27: Schema.Attribute.String;
+    note28: Schema.Attribute.String;
+    note29: Schema.Attribute.String;
+    note30: Schema.Attribute.String;
+    note31: Schema.Attribute.String;
+    note32: Schema.Attribute.String;
+    note33: Schema.Attribute.String;
+    note34: Schema.Attribute.String;
+    note35: Schema.Attribute.String;
+    note36: Schema.Attribute.String;
+    note37: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    site01: Schema.Attribute.String;
+    site02: Schema.Attribute.String;
+    site03: Schema.Attribute.String;
+    site04: Schema.Attribute.String;
+    site05: Schema.Attribute.String;
+    site06: Schema.Attribute.String;
+    site07: Schema.Attribute.String;
+    site08: Schema.Attribute.String;
+    site09: Schema.Attribute.String;
+    site10: Schema.Attribute.String;
+    site11: Schema.Attribute.String;
+    site12: Schema.Attribute.String;
+    site13: Schema.Attribute.String;
+    site14: Schema.Attribute.String;
+    site15: Schema.Attribute.String;
+    site16: Schema.Attribute.String;
+    site17: Schema.Attribute.String;
+    site18: Schema.Attribute.String;
+    site19: Schema.Attribute.String;
+    site20: Schema.Attribute.String;
+    site21: Schema.Attribute.String;
+    site22: Schema.Attribute.String;
+    site23: Schema.Attribute.String;
+    site24: Schema.Attribute.String;
+    site25: Schema.Attribute.String;
+    site26: Schema.Attribute.String;
+    site27: Schema.Attribute.String;
+    site28: Schema.Attribute.String;
+    site29: Schema.Attribute.String;
+    site30: Schema.Attribute.String;
+    site31: Schema.Attribute.String;
+    site32: Schema.Attribute.String;
+    site33: Schema.Attribute.String;
+    site34: Schema.Attribute.String;
+    site35: Schema.Attribute.String;
+    site36: Schema.Attribute.String;
+    site37: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCommondocumentCommondocument
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'commondocuments';
+  info: {
+    displayName: 'commondocument';
+    pluralName: 'commondocuments';
+    singularName: 'commondocument';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    cover: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Text;
+    filetype: Schema.Attribute.String;
+    hash: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commondocument.commondocument'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    ref: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
   collectionName: 'experiences';
   info: {
@@ -560,6 +707,43 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     year: Schema.Attribute.Integer;
+  };
+}
+
+export interface ApiFengbroNewsSourceFengbroNewsSource
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'fengbro_news_sources';
+  info: {
+    displayName: 'FengbroNews';
+    pluralName: 'fengbro-news-sources';
+    singularName: 'fengbro-news-source';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adapter: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    domain: Schema.Attribute.String;
+    homeUrl: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fengbro-news-source.fengbro-news-source'
+    > &
+      Schema.Attribute.Private;
+    locked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    searchUrlTemplate: Schema.Attribute.Text;
+    sourceId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -593,6 +777,47 @@ export interface ApiFileTypeFileType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFinanceinstrument2Financeinstrument2
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'financeinstrument2s';
+  info: {
+    displayName: 'financeinstrument2';
+    pluralName: 'financeinstrument2s';
+    singularName: 'financeinstrument2';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    bilibiliUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    group: Schema.Attribute.String;
+    imageUrl1: Schema.Attribute.String;
+    imageUrl2: Schema.Attribute.String;
+    imageUrl3: Schema.Attribute.String;
+    linkUrl1: Schema.Attribute.Text;
+    linkUrl2: Schema.Attribute.Text;
+    linkUrl3: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::financeinstrument2.financeinstrument2'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    provider: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    symbol: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtubeUrl: Schema.Attribute.String;
+  };
+}
+
 export interface ApiFoodFood extends Struct.CollectionTypeSchema {
   collectionName: 'foods';
   info: {
@@ -601,7 +826,7 @@ export interface ApiFoodFood extends Struct.CollectionTypeSchema {
     singularName: 'food';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     amount: Schema.Attribute.Integer;
@@ -611,16 +836,15 @@ export interface ApiFoodFood extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::food.food'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Unique;
-    photo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.String;
+    photohash: Schema.Attribute.Text;
     photoHash: Schema.Attribute.String;
+    photourl: Schema.Attribute.String;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     shop: Schema.Attribute.String;
-    todate: Schema.Attribute.Date;
+    todate: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -684,6 +908,38 @@ export interface ApiImageTypeImageType extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiImageImage extends Struct.CollectionTypeSchema {
+  collectionName: 'images';
+  info: {
+    displayName: 'image';
+    pluralName: 'images';
+    singularName: 'image';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    cover: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Text;
+    filetype: Schema.Attribute.String;
+    hash: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::image.image'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    ref: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInventoryInventory extends Struct.CollectionTypeSchema {
   collectionName: 'inventories';
   info: {
@@ -716,6 +972,43 @@ export interface ApiInventoryInventory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLandtophistoryLandtophistory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'landtop_histories';
+  info: {
+    displayName: 'landtophistory';
+    pluralName: 'landtophistories';
+    singularName: 'landtophistory';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    brand: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    landtopPrice: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landtophistory.landtophistory'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    productId: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    snapshotDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    snapshotKey: Schema.Attribute.String & Schema.Attribute.Required;
+    source: Schema.Attribute.String & Schema.Attribute.Required;
+    sourceUrl: Schema.Attribute.String;
+    suggestedPrice: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMailMail extends Struct.CollectionTypeSchema {
   collectionName: 'mails';
   info: {
@@ -739,6 +1032,40 @@ export interface ApiMailMail extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiManualPriceManualPrice extends Struct.CollectionTypeSchema {
+  collectionName: 'manual_prices';
+  info: {
+    displayName: 'ManualPrice';
+    pluralName: 'manual-prices';
+    singularName: 'manual-price';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::manual-price.manual-price'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    price: Schema.Attribute.Integer;
+    productId: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    recordId: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -778,6 +1105,224 @@ export interface ApiMemberMember extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMenuusageMenuusage extends Struct.CollectionTypeSchema {
+  collectionName: 'menuusages';
+  info: {
+    displayName: 'menuusage';
+    pluralName: 'menuusages';
+    singularName: 'menuusage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    count: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lastUsedAt: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menuusage.menuusage'
+    > &
+      Schema.Attribute.Private;
+    moduleId: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMusicItemMusicItem extends Struct.CollectionTypeSchema {
+  collectionName: 'music_items';
+  info: {
+    displayName: 'music';
+    pluralName: 'music-items';
+    singularName: 'music-item';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    cover: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Text;
+    filetype: Schema.Attribute.String;
+    hash: Schema.Attribute.Text;
+    language: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::music-item.music-item'
+    > &
+      Schema.Attribute.Private;
+    lyrics: Schema.Attribute.Text;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    ref: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNotificationsettingNotificationsetting
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'notificationsettings';
+  info: {
+    displayName: 'notificationsettings';
+    pluralName: 'notificationsettings';
+    singularName: 'notificationsetting';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fromEmail: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::notificationsetting.notificationsetting'
+    > &
+      Schema.Attribute.Private;
+    passwordHash: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    slotsJson: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPodcastPodcast extends Struct.CollectionTypeSchema {
+  collectionName: 'podcasts';
+  info: {
+    displayName: 'podcast';
+    pluralName: 'podcasts';
+    singularName: 'podcast';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    cover: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Text;
+    filetype: Schema.Attribute.String;
+    hash: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::podcast.podcast'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    ref: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiQuotaQuota extends Struct.CollectionTypeSchema {
+  collectionName: 'quotas';
+  info: {
+    displayName: 'quota';
+    pluralName: 'quotas';
+    singularName: 'quota';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    accessToken: Schema.Attribute.Text;
+    account: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    expiry5h: Schema.Attribute.String;
+    expiryMonth: Schema.Attribute.String;
+    expiryWeek: Schema.Attribute.String;
+    litmediaAccount: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::quota.quota'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    pointsSyncedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    quotaExpiry: Schema.Attribute.DateTime;
+    quotaPoints: Schema.Attribute.Integer;
+    quotaRatio: Schema.Attribute.Integer;
+    quotaRemaining: Schema.Attribute.Integer;
+    ratio5h: Schema.Attribute.Integer;
+    ratioMonth: Schema.Attribute.Integer;
+    ratioWeek: Schema.Attribute.Integer;
+    resetCreditsBalance: Schema.Attribute.Integer;
+    resetCreditsExpiry: Schema.Attribute.String;
+    serviceType: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usageSyncedAt: Schema.Attribute.DateTime;
+  };
+}
+
+export interface ApiReinstallReinstall extends Struct.CollectionTypeSchema {
+  collectionName: 'reinstalls';
+  info: {
+    displayName: 'reinstall';
+    pluralName: 'reinstalls';
+    singularName: 'reinstall';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    licenseType: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::reinstall.reinstall'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    serial: Schema.Attribute.Text;
+    site: Schema.Attribute.Text;
+    softwareType: Schema.Attribute.String;
+    subscriptionCurrency: Schema.Attribute.String;
+    subscriptionPeriod: Schema.Attribute.String;
+    subscriptionPrice: Schema.Attribute.Integer;
+    subscriptionSoftware: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    system: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    viewPassword: Schema.Attribute.String;
+  };
+}
+
 export interface ApiRoutineRoutine extends Struct.CollectionTypeSchema {
   collectionName: 'routines';
   info: {
@@ -786,22 +1331,97 @@ export interface ApiRoutineRoutine extends Struct.CollectionTypeSchema {
     singularName: 'routine';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    lastdate1: Schema.Attribute.DateTime;
+    lastdate2: Schema.Attribute.DateTime;
+    lastdate3: Schema.Attribute.DateTime;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::routine.routine'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Unique;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     nextdate: Schema.Attribute.Date;
+    note: Schema.Attribute.Text;
+    photo: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiShoppinglistShoppinglist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'shoppinglists';
+  info: {
+    displayName: 'shoppinglist';
+    pluralName: 'shoppinglists';
+    singularName: 'shoppinglist';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    account: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shoppinglist.shoppinglist'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    pickupMethod: Schema.Attribute.String;
+    plannedDate: Schema.Attribute.DateTime;
+    price: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    quantity: Schema.Attribute.Integer;
+    shop: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSitevisitSitevisit extends Struct.CollectionTypeSchema {
+  collectionName: 'sitevisits';
+  info: {
+    displayName: 'sitevisit';
+    pluralName: 'sitevisits';
+    singularName: 'sitevisit';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    count: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currentStreak: Schema.Attribute.Integer;
+    lastVisitAt: Schema.Attribute.DateTime;
+    lastVisitDate: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sitevisit.sitevisit'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -817,25 +1437,130 @@ export interface ApiSubscriptionSubscription
     singularName: 'subscription';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     account: Schema.Attribute.String;
+    continue: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    iscontinue: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::subscription.subscription'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Unique;
-    nextdate: Schema.Attribute.Date;
-    note: Schema.Attribute.RichText;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    nextdate: Schema.Attribute.DateTime;
+    note: Schema.Attribute.Text;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     site: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiToolPriceHistoryToolPriceHistory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tool_price_histories';
+  info: {
+    displayName: 'ToolPriceHistory';
+    pluralName: 'tool-price-histories';
+    singularName: 'tool-price-history';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currentPrice: Schema.Attribute.Integer;
+    highPrice: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tool-price-history.tool-price-history'
+    > &
+      Schema.Attribute.Private;
+    lowPrice: Schema.Attribute.Integer;
+    notice: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    queryText: Schema.Attribute.String & Schema.Attribute.Required;
+    resultUrl: Schema.Attribute.String;
+    source: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    toolType: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrialpurchaseTrialpurchase
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'trialpurchases';
+  info: {
+    displayName: 'trialpurchase';
+    pluralName: 'trialpurchases';
+    singularName: 'trialpurchase';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    account: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    eventDate: Schema.Attribute.DateTime;
+    firstPurchasePrice: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::trialpurchase.trialpurchase'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    purchaseStatus: Schema.Attribute.String;
+    regularPrice: Schema.Attribute.Integer;
+    trialStatus: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTubechannelTubechannel extends Struct.CollectionTypeSchema {
+  collectionName: 'tubechannels';
+  info: {
+    displayName: 'tubechannel';
+    pluralName: 'tubechannels';
+    singularName: 'tubechannel';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    alias: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tubechannel.tubechannel'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sourceUrl: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -880,19 +1605,27 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
     singularName: 'video';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
+    category: Schema.Attribute.String;
+    cover: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
+    file: Schema.Attribute.Text;
+    fileSize: Schema.Attribute.BigInteger;
+    filetype: Schema.Attribute.String;
+    hash: Schema.Attribute.Text;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::video.video'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Unique;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    ref: Schema.Attribute.Text;
     season: Schema.Attribute.String;
     site: Schema.Attribute.String;
     song: Schema.Attribute.String;
@@ -1420,16 +2153,34 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::bank.bank': ApiBankBank;
       'api::cloud.cloud': ApiCloudCloud;
+      'api::commonaccount.commonaccount': ApiCommonaccountCommonaccount;
+      'api::commondocument.commondocument': ApiCommondocumentCommondocument;
       'api::experience.experience': ApiExperienceExperience;
+      'api::fengbro-news-source.fengbro-news-source': ApiFengbroNewsSourceFengbroNewsSource;
       'api::file-type.file-type': ApiFileTypeFileType;
+      'api::financeinstrument2.financeinstrument2': ApiFinanceinstrument2Financeinstrument2;
       'api::food.food': ApiFoodFood;
       'api::host.host': ApiHostHost;
       'api::image-type.image-type': ApiImageTypeImageType;
+      'api::image.image': ApiImageImage;
       'api::inventory.inventory': ApiInventoryInventory;
+      'api::landtophistory.landtophistory': ApiLandtophistoryLandtophistory;
       'api::mail.mail': ApiMailMail;
+      'api::manual-price.manual-price': ApiManualPriceManualPrice;
       'api::member.member': ApiMemberMember;
+      'api::menuusage.menuusage': ApiMenuusageMenuusage;
+      'api::music-item.music-item': ApiMusicItemMusicItem;
+      'api::notificationsetting.notificationsetting': ApiNotificationsettingNotificationsetting;
+      'api::podcast.podcast': ApiPodcastPodcast;
+      'api::quota.quota': ApiQuotaQuota;
+      'api::reinstall.reinstall': ApiReinstallReinstall;
       'api::routine.routine': ApiRoutineRoutine;
+      'api::shoppinglist.shoppinglist': ApiShoppinglistShoppinglist;
+      'api::sitevisit.sitevisit': ApiSitevisitSitevisit;
       'api::subscription.subscription': ApiSubscriptionSubscription;
+      'api::tool-price-history.tool-price-history': ApiToolPriceHistoryToolPriceHistory;
+      'api::trialpurchase.trialpurchase': ApiTrialpurchaseTrialpurchase;
+      'api::tubechannel.tubechannel': ApiTubechannelTubechannel;
       'api::video-type.video-type': ApiVideoTypeVideoType;
       'api::video.video': ApiVideoVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;

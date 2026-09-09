@@ -4,6 +4,6 @@
  * bank service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreService('api::bank.bank');
+module.exports = factories.createCoreService('api::bank.bank');

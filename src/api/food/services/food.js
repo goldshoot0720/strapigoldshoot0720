@@ -4,6 +4,6 @@
  * food service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreService('api::food.food');
+module.exports = factories.createCoreService('api::food.food');

@@ -7,13 +7,31 @@
     "displayName": "routine"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "unique": true
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "lastdate1": {
+      "type": "datetime"
+    },
+    "lastdate2": {
+      "type": "datetime"
+    },
+    "lastdate3": {
+      "type": "datetime"
+    },
+    "link": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "string"
     },
     "nextdate": {
       "type": "date"

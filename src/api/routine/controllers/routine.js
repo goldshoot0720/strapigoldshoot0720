@@ -4,6 +4,6 @@
  * routine controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreController('api::routine.routine');
+module.exports = factories.createCoreController('api::routine.routine');

@@ -4,6 +4,6 @@
  * video controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreController('api::video.video');
+module.exports = factories.createCoreController('api::video.video');

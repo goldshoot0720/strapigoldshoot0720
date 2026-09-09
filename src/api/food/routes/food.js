@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * food router
+ * food route
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { factories } = require('@strapi/strapi');
 
-module.exports = createCoreRouter('api::food.food');
+module.exports = factories.createCoreRouter('api::food.food');
