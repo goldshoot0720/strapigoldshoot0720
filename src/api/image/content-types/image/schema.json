@@ -34,8 +34,7 @@
       "type": "text"
     },
     "cover": {
-      "type": "boolean",
-      "default": false
+      "type": "text"
     }
   }
 }

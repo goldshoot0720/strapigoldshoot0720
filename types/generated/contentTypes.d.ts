@@ -920,7 +920,7 @@ export interface ApiImageImage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     category: Schema.Attribute.String;
-    cover: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    cover: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
